@@ -1,0 +1,33 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo {
+  font-size: 1.7em;
+  float: left;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 10px;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.jumbotron {
+  background-image: asset-url("tic-tac-toe.png");
+  background-size: cover;
+  height: 500px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
