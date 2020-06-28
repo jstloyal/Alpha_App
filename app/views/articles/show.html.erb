@@ -1,12 +1,14 @@
 <h3>Showing selected article</h3>
+<div class="jumbotron" >
+  <p>
+    Title: <%= @article.title %>
+  </p>
 
-<p>
-  Title: <%= @article.title %>
-</p>
+  <p>
+    Description: <%= @article.description %>
+  </p>
+  <%= link_to "Edit this article", edit_article_path(@article) %>
+  <%= link_to "Back to articles listing", articles_path %>
+</div>
 
-<p>
-  Description: <%= @article.description %>
-</p>
 
-<%= link_to "Edit this article", edit_article_path(@article) %>
-<%= link_to "Back to articles listing", articles_path %>
