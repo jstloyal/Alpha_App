@@ -18,6 +18,11 @@ $navbar-default-bg: #08088A;
   text-decoration: none;
 }
 
+.main-link {
+  color: #fff;
+  font-weight: 500;
+}
+
 .jumbotron {
   background-image: asset-url('background.jpg');
   background-size: cover;
