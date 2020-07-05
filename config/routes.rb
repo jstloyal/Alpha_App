@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'articles#home'
+  root 'pages#home'
+  resources :pages
+
   resources :articles
 
   get 'signup', to: 'users#new'
