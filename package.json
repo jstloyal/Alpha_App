@@ -3,6 +3,6 @@
   "description": "a cool blog app",
   "version": "0.1.0",
   "engines": {
-    "node": "^8.16.0"
+    "node": "13.x"
   }
 }
