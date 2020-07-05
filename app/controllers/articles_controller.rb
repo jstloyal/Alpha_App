@@ -3,10 +3,6 @@ class ArticlesController < ApplicationController
   before_action :require_user, except: %i[index show]
   before_action :require_same_user, only: %i[edit update destroy]
 
-  def home
-    redirect_to articles_path if logged_in?
-  end
-
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
   end
@@ -17,7 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     if @article.save
       flash[:notice] = "Article was successfully created!"
       redirect_to article_path(@article)
