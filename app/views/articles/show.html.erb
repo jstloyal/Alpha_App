@@ -8,13 +8,16 @@
           <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
           <li class='article-title'><%= link_to @article.user.username, user_path(@article.user) %></li>
           <li><<small><%= pluralize(@article.user.articles.count, 'article') if @article.user.articles %></small></li>
-        </div>
+         </div>
       </div>
   </ul>
   <% end %>
   <h4 class='center description'><strong>Description: </strong></h4>
   <hr>
   <%= simple_format(@article.description) %>
+  <% if @article.categories.any? %>
+    <p>Categories: <%= render @article.categories %></p>
+  <% end %>
   <div class="article-actions">
     <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
       <%= link_to 'Edit this article', edit_article_path(@article), class: 'btn btn-xs btn-primary'  %>
