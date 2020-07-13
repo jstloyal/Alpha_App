@@ -1,11 +1,4 @@
-<% if @article.errors.any? %>
-<p>The following errors prevented the article from getting created:</p>
-<ul>
-  <% @article.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
+<%= render 'shared/errors', obj: @article %>
 
 <div class='row'>
   <div class='col-xs-12'>
@@ -24,6 +17,15 @@
         </div>
         <div class="col-sm-8">
           <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Enter description" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-offset-2 col-sm-8">
+            <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+              <% cb.label(class: "checkbox-inline input-checkbox") { cb.check_box(class: "checkbox") + cb.text} %>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="form-group">
